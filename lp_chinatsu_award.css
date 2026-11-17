@@ -1,0 +1,1462 @@
+/* ===============================================
+   受賞アーティスト Chinatsu 訴求LP 2026-11-17
+   LP専用CSS。テーマCSS（base / components / themes/artmake / pages/detail）の後に読み込む。
+   クラス接頭辞: lpa-
+   =============================================== */
+
+.lpa {
+  --lpa-ink: #2E231D;
+  --lpa-ink-soft: #75645A;
+  --lpa-dark: #2A201B;
+  --lpa-dark-2: #3A2C25;
+  --lpa-gold: #B8935A;
+  --lpa-gold-deep: #8E6B36;
+  --lpa-gold-light: #DCC393;
+  --lpa-gold-pale: #F4ECDD;
+  --lpa-paper: #F7F2EA;
+  --lpa-cream: #FCFAF6;
+  --lpa-line: #E8DECF;
+  --lpa-on-dark: #F6EFE5;
+  --lpa-on-dark-soft: #CDBFAF;
+  --lpa-font-serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "游明朝", serif;
+  --lpa-font-en: "Cormorant Garamond", "Times New Roman", serif;
+  padding-top: 60px; /* 固定ヘッダー分 */
+  color: var(--lpa-ink);
+  overflow-x: hidden;
+}
+
+.lpa img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 1カラムのLPとして、広い画面でも読みやすい幅に収める */
+.lpa .container {
+  max-width: 560px;
+}
+
+/* LPでは離脱導線を減らす（グローバルメニュー・ページトップボタンを非表示） */
+.lp-chinatsu-award .header__menu-toggle {
+  display: none !important;
+}
+
+.lp-chinatsu-award .back-to-top {
+  display: none;
+}
+
+/* ---------- 共通：セクション ---------- */
+.lpa-section {
+  padding: 56px 0;
+  background-color: #FFFFFF;
+}
+
+.lpa-section--paper {
+  background-color: var(--lpa-paper);
+}
+
+.lpa-section--cream {
+  background-color: var(--lpa-cream);
+}
+
+.lpa-section--dark {
+  background: linear-gradient(180deg, var(--lpa-dark) 0%, var(--lpa-dark-2) 100%);
+  color: var(--lpa-on-dark);
+}
+
+.lpa-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.lpa-heading__en {
+  display: block;
+  font-family: var(--lpa-font-en);
+  font-style: italic;
+  font-size: 17px;
+  letter-spacing: 0.08em;
+  color: var(--lpa-gold-deep);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.lpa-heading__ja {
+  display: block;
+  font-family: var(--lpa-font-serif);
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1.45;
+  letter-spacing: 0.06em;
+  color: var(--lpa-ink);
+}
+
+.lpa-heading::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 1px;
+  margin: 18px auto 0;
+  background-color: var(--lpa-gold);
+}
+
+.lpa-heading--light .lpa-heading__en {
+  color: var(--lpa-gold-light);
+}
+
+.lpa-heading--light .lpa-heading__ja {
+  color: var(--lpa-on-dark);
+}
+
+.lpa-subheading {
+  margin: 40px 0 16px;
+  font-family: var(--lpa-font-serif);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: var(--lpa-ink);
+}
+
+.lpa-subheading span {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-family-base);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--lpa-gold-deep);
+}
+
+.lpa-lead {
+  font-size: 15px;
+  line-height: 1.9;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.lpa-lead--left {
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.lpa-note {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--lpa-ink-soft);
+}
+
+/* ---------- 共通：LINE CTA ---------- */
+.lpa-cta {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.lpa-cta__lead {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--lpa-gold-deep);
+  margin-bottom: 8px;
+}
+
+.lpa-cta__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 62px;
+  padding: 12px 20px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #06C755 0%, #00B900 100%);
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 185, 0, 0.28);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lpa-cta__button:hover {
+  opacity: 1;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 185, 0, 0.36);
+}
+
+.lpa-cta__button i {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.lpa-cta__note {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--lpa-ink-soft);
+}
+
+.lpa-cta__note strong {
+  font-weight: 700;
+  color: var(--lpa-ink);
+}
+
+/* ---------- 共通：月桂樹つき受賞バッジ ---------- */
+.lpa-laurel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 104px;
+  padding: 4px 34px;
+  text-align: center;
+  color: var(--lpa-gold-light);
+  list-style: none;
+}
+
+.lpa-laurel::before,
+.lpa-laurel::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 46px;
+  height: 92px;
+  margin-top: -46px;
+  background-color: currentColor;
+  -webkit-mask: url("images/laurel.svg") center / contain no-repeat;
+  mask: url("images/laurel.svg") center / contain no-repeat;
+}
+
+.lpa-laurel::before {
+  left: -4px;
+}
+
+.lpa-laurel::after {
+  right: -4px;
+  transform: scaleX(-1);
+}
+
+.lpa-laurel__place {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  color: var(--lpa-on-dark);
+}
+
+.lpa-laurel__rank {
+  font-family: var(--lpa-font-serif);
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: var(--lpa-gold-light);
+}
+
+.lpa-laurel__rank small {
+  margin-left: 2px;
+  font-size: 20px;
+}
+
+.lpa-laurel__rank--ja {
+  padding: 5px 0 6px;
+  font-size: 25px;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+}
+
+.lpa-laurel__name {
+  font-size: 9px;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: var(--lpa-on-dark-soft);
+}
+
+/* 明るい背景で使うとき */
+.lpa-laurel--light {
+  color: var(--lpa-gold);
+}
+
+.lpa-laurel--light .lpa-laurel__place {
+  color: var(--lpa-ink);
+}
+
+.lpa-laurel--light .lpa-laurel__rank {
+  color: var(--lpa-gold-deep);
+}
+
+.lpa-laurel--light .lpa-laurel__name {
+  color: var(--lpa-ink-soft);
+}
+
+/* ---------- ファーストビュー ---------- */
+.lpa-hero {
+  position: relative;
+  padding: 26px 0 34px;
+  background:
+    radial-gradient(120% 60% at 85% 0%, rgba(184, 147, 90, 0.26) 0%, rgba(184, 147, 90, 0) 60%),
+    linear-gradient(180deg, var(--lpa-dark) 0%, var(--lpa-dark-2) 100%);
+  color: var(--lpa-on-dark);
+  overflow: hidden;
+}
+
+.lpa-hero__inner {
+  position: relative;
+}
+
+.lpa-hero__label {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 14px;
+  border: 1px solid rgba(220, 195, 147, 0.7);
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  color: var(--lpa-gold-light);
+  overflow: hidden;
+}
+
+.lpa-hero__label,
+.lpa-hero__label span {
+  padding: 6px 12px;
+}
+
+.lpa-hero__label {
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.lpa-hero__label span {
+  display: inline-block;
+  margin-left: 10px;
+  background-color: var(--lpa-gold-light);
+  color: var(--lpa-dark);
+}
+
+.lpa-hero__title {
+  font-family: var(--lpa-font-serif);
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  font-feature-settings: "palt";
+  color: var(--lpa-on-dark);
+  margin-bottom: 20px;
+}
+
+.lpa-hero__title span {
+  display: block;
+  white-space: nowrap;
+}
+
+.lpa-hero__title .lpa-hero__title-em {
+  display: inline;
+  font-size: 39px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+  color: var(--lpa-gold-light);
+}
+
+.lpa-hero__title .lpa-hero__title-em + span {
+  display: inline;
+}
+
+.lpa-hero__body {
+  display: grid;
+  grid-template-columns: minmax(0, 46fr) minmax(0, 54fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.lpa-hero__photo {
+  position: relative;
+  margin: 0;
+}
+
+.lpa-hero__photo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 42% 30%;
+  border-radius: 200px 200px 6px 6px;
+  border: 1px solid rgba(220, 195, 147, 0.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.lpa-hero__photo figcaption {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background-color: rgba(255, 255, 255, 0.94);
+  border-radius: 9999px;
+  padding: 4px 12px;
+  font-size: 9px;
+  line-height: 1.3;
+  color: var(--lpa-ink-soft);
+}
+
+.lpa-hero__photo figcaption strong {
+  margin-left: 5px;
+  font-family: var(--lpa-font-en);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--lpa-ink);
+}
+
+.lpa-hero__awards {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.lpa-hero__lead {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--lpa-on-dark);
+}
+
+.lpa-cta--hero {
+  margin-top: 20px;
+}
+
+.lpa-cta--hero .lpa-cta__lead {
+  color: var(--lpa-gold-light);
+}
+
+.lpa-cta--hero .lpa-cta__note {
+  color: var(--lpa-on-dark-soft);
+}
+
+.lpa-cta--hero .lpa-cta__note strong {
+  color: var(--lpa-on-dark);
+}
+
+/* ---------- 受賞歴 ---------- */
+.lpa-award {
+  padding: 22px 18px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--lpa-line);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(46, 35, 29, 0.06);
+}
+
+.lpa-award + .lpa-award {
+  margin-top: 16px;
+}
+
+.lpa-award__head {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.lpa-award__photo {
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--lpa-paper);
+}
+
+.lpa-award__photo img {
+  width: 100%;
+}
+
+.lpa-award__photo--wide {
+  margin-bottom: 16px;
+}
+
+.lpa-award__summary--center {
+  text-align: center;
+}
+
+.lpa-award__meta {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  color: var(--lpa-gold-deep);
+}
+
+.lpa-award__meta span {
+  display: block;
+}
+
+.lpa-award__title {
+  margin-top: 6px;
+  font-family: var(--lpa-font-serif);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: var(--lpa-ink);
+}
+
+.lpa-award__category {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--lpa-ink-soft);
+}
+
+.lpa-award__rank {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 2px 14px 4px;
+  border-top: 1px solid var(--lpa-gold);
+  border-bottom: 1px solid var(--lpa-gold);
+  font-family: var(--lpa-font-serif);
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  color: var(--lpa-gold-deep);
+}
+
+.lpa-award__rank strong {
+  margin-right: 2px;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.lpa-award__rank--ja strong {
+  margin-right: 6px;
+  font-size: 26px;
+  line-height: 1.5;
+}
+
+.lpa-award__text {
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.lpa-award__criteria {
+  margin-top: 14px;
+  padding: 14px 14px 12px;
+  background-color: var(--lpa-cream);
+  border-radius: 8px;
+}
+
+.lpa-award__criteria-title {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--lpa-gold-deep);
+}
+
+.lpa-award__criteria ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lpa-award__criteria li {
+  padding: 4px 10px;
+  border: 1px solid var(--lpa-line);
+  border-radius: 9999px;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.lpa-award__link {
+  margin-top: 14px;
+  font-size: 12px;
+  text-align: right;
+}
+
+.lpa-award__link a {
+  color: var(--lpa-gold-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.lpa-award__link i {
+  margin-left: 6px;
+  font-size: 10px;
+}
+
+/* ---------- 担当アーティスト ---------- */
+.lpa-artist {
+  text-align: center;
+}
+
+.lpa-artist__scene {
+  margin: 0 0 22px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(46, 35, 29, 0.14);
+}
+
+.lpa-artist__scene img {
+  width: 100%;
+}
+
+.lpa-artist__name {
+  font-family: var(--lpa-font-en);
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  color: var(--lpa-ink);
+}
+
+.lpa-artist__role {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--lpa-gold-deep);
+  letter-spacing: 0.08em;
+}
+
+.lpa-artist__career {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--lpa-line);
+  text-align: left;
+}
+
+.lpa-artist__career li {
+  position: relative;
+  padding: 12px 4px 12px 30px;
+  border-bottom: 1px solid var(--lpa-line);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.lpa-artist__career li::before {
+  content: "\f559";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 14px;
+  position: absolute;
+  left: 6px;
+  top: 13px;
+  color: var(--lpa-gold);
+}
+
+.lpa-artist__comment {
+  position: relative;
+  margin: 24px 0 0;
+  padding: 26px 12px 22px;
+  background-color: var(--lpa-paper);
+  border-radius: 12px;
+  font-family: var(--lpa-font-serif);
+  font-size: 15px;
+  line-height: 2;
+  letter-spacing: 0;
+}
+
+.lpa-artist__comment::before {
+  content: "\201C";
+  position: absolute;
+  top: -6px;
+  left: 16px;
+  font-family: var(--lpa-font-en);
+  font-size: 56px;
+  line-height: 1;
+  color: var(--lpa-gold);
+  opacity: 0.7;
+}
+
+.lpa-artist__text {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.9;
+  text-align: left;
+}
+
+.lpa-artist__instagram {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  padding: 12px 20px 12px 14px;
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--lpa-gold);
+  border-radius: 9999px;
+  color: var(--lpa-ink);
+  text-align: left;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(142, 107, 54, 0.14);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lpa-artist__instagram:hover {
+  opacity: 1;
+  color: var(--lpa-ink);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(142, 107, 54, 0.22);
+}
+
+.lpa-artist__instagram-icon {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
+  color: #FFFFFF;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lpa-artist__instagram-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+.lpa-artist__instagram-text strong {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.lpa-artist__instagram-text small {
+  margin-top: 2px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--lpa-ink-soft);
+}
+
+.lpa-artist__instagram-arrow {
+  font-size: 13px;
+  color: var(--lpa-gold);
+}
+
+/* ---------- 3つのこだわり ---------- */
+.lpa-points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.lpa-point {
+  padding: 22px 20px 20px;
+  border: 1px solid rgba(220, 195, 147, 0.4);
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.lpa-point__num {
+  font-family: var(--lpa-font-en);
+  font-style: italic;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--lpa-gold-light);
+}
+
+.lpa-point__title {
+  margin-top: 10px;
+  font-family: var(--lpa-font-serif);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+  color: var(--lpa-on-dark);
+}
+
+.lpa-point__text {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--lpa-on-dark-soft);
+}
+
+/* ---------- 施術タイプ ---------- */
+.lpa-types {
+  display: grid;
+  gap: 12px;
+}
+
+.lpa-type {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--lpa-line);
+  border-radius: 12px;
+}
+
+.lpa-type__image {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+.lpa-type__name {
+  font-family: var(--lpa-font-serif);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  color: var(--lpa-ink);
+}
+
+.lpa-type__text {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ---------- リップのメリット ---------- */
+.lpa-merits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.lpa-merits li {
+  padding: 18px 8px 16px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--lpa-line);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.lpa-merits i {
+  font-size: 22px;
+  color: var(--lpa-gold);
+  margin-bottom: 10px;
+}
+
+.lpa-merits strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--lpa-ink);
+}
+
+/* ---------- 症例カルーセル ---------- */
+.lpa-carousel {
+  display: flex;
+  gap: 12px;
+  max-width: 560px;
+  margin: 0 auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 20px 4px;
+  scroll-padding-left: 20px;
+}
+
+.lpa-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.lpa-carousel__item {
+  flex: 0 0 82%;
+  margin: 0;
+  scroll-snap-align: start;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(46, 35, 29, 0.1);
+  background-color: #FFFFFF;
+}
+
+.lpa-carousel__item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.lpa-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.lpa-carousel__dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #DDD2C2;
+  transition: background-color 0.25s;
+}
+
+.lpa-carousel__dots span.is-active {
+  background-color: var(--lpa-gold-deep);
+}
+
+.lpa-carousel__hint {
+  margin-top: 6px;
+  text-align: center;
+  font-family: var(--lpa-font-en);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: var(--lpa-gold-deep);
+}
+
+.lpa-disclosure {
+  margin-top: 20px;
+  padding: 14px 16px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--lpa-line);
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--lpa-ink-soft);
+}
+
+.lpa-disclosure dt {
+  float: left;
+  clear: left;
+  margin-right: 6px;
+  font-weight: 700;
+  color: var(--lpa-ink);
+}
+
+.lpa-disclosure dd {
+  margin: 0;
+}
+
+/* ---------- 料金 ---------- */
+.lpa-price {
+  margin-top: 28px;
+  padding: 22px 18px 18px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--lpa-gold);
+  border-radius: 12px;
+}
+
+.lpa-price__title {
+  font-family: var(--lpa-font-serif);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: var(--lpa-ink);
+}
+
+.lpa-price__title span {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-family-base);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--lpa-gold-deep);
+}
+
+.lpa-price__list {
+  margin: 14px 0 12px;
+  border-top: 1px solid var(--lpa-line);
+}
+
+.lpa-price__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 2px;
+  border-bottom: 1px solid var(--lpa-line);
+}
+
+.lpa-price__row dt {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.lpa-price__row--option dt {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.lpa-price__row dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.lpa-price__row dd strong {
+  margin-right: 2px;
+  font-family: var(--lpa-font-serif);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--lpa-gold-deep);
+}
+
+.lpa-price__row--option dd strong {
+  font-size: 21px;
+}
+
+.lpa-price__row dd small {
+  margin-left: 2px;
+  font-size: 12px;
+  color: var(--lpa-ink-soft);
+}
+
+/* ---------- 安心基準 ---------- */
+.lpa-trust {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.lpa-trust li {
+  padding: 18px 12px 16px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(46, 35, 29, 0.05);
+}
+
+.lpa-trust i {
+  font-size: 24px;
+  color: var(--lpa-gold);
+  margin-bottom: 10px;
+}
+
+.lpa-trust strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--lpa-ink);
+}
+
+.lpa-trust span {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--lpa-ink-soft);
+}
+
+/* ---------- ご予約の流れ ---------- */
+.lpa-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: lpa-step;
+}
+
+.lpa-steps li {
+  position: relative;
+  padding: 0 0 28px 62px;
+  counter-increment: lpa-step;
+}
+
+.lpa-steps li:last-child {
+  padding-bottom: 0;
+}
+
+.lpa-steps li::before {
+  content: "0" counter(lpa-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--lpa-dark);
+  color: var(--lpa-gold-light);
+  font-family: var(--lpa-font-en);
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lpa-steps li::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 50px;
+  bottom: 6px;
+  width: 1px;
+  background-color: var(--lpa-gold);
+  opacity: 0.5;
+}
+
+.lpa-steps li:last-child::after {
+  display: none;
+}
+
+.lpa-steps__title {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.5;
+  padding-top: 8px;
+  color: var(--lpa-ink);
+}
+
+.lpa-steps__text {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.lpa-steps__message {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 4px 16px 16px 16px;
+  background-color: #E9F9EE;
+  border: 1px solid #BFEBCB;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #1E7A3C;
+}
+
+/* ---------- FAQ（テーマ .faq-item を利用） ---------- */
+.lpa-faq .faq-item__question {
+  font-size: 15px;
+  gap: 12px;
+  padding: 18px 16px;
+}
+
+.lpa-faq .faq-item__answer-inner {
+  gap: 12px;
+  padding: 4px 16px 18px;
+  font-size: 14px;
+}
+
+/* ---------- リスク・注意事項 ---------- */
+.lpa-risk__block {
+  padding: 18px 16px;
+  background-color: var(--lpa-cream);
+  border: 1px solid var(--lpa-line);
+  border-radius: 8px;
+}
+
+.lpa-risk__block + .lpa-risk__block {
+  margin-top: 12px;
+}
+
+.lpa-risk__title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  color: var(--lpa-ink);
+}
+
+.lpa-risk__block p,
+.lpa-risk__block li {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.lpa-risk__block ul {
+  margin: 0;
+  padding-left: 1.2em;
+  list-style: disc;
+}
+
+.lpa-risk__link {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.lpa-risk__link a {
+  color: var(--lpa-gold-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- 最終CTA・クリニック情報 ---------- */
+.lpa-closing {
+  background: linear-gradient(180deg, var(--lpa-paper) 0%, var(--lpa-gold-pale) 100%);
+}
+
+.lpa-closing__awards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+/* 2列に並べるため、月桂樹と文字を少し小さくする */
+.lpa-closing__awards .lpa-laurel {
+  padding: 4px 30px;
+}
+
+.lpa-closing__awards .lpa-laurel::before,
+.lpa-closing__awards .lpa-laurel::after {
+  width: 40px;
+  height: 80px;
+  margin-top: -40px;
+}
+
+.lpa-closing__awards .lpa-laurel::before {
+  left: -9px;
+}
+
+.lpa-closing__awards .lpa-laurel::after {
+  right: -9px;
+}
+
+.lpa-closing__awards .lpa-laurel__place {
+  font-size: 9.5px;
+  letter-spacing: 0.02em;
+}
+
+.lpa-closing__awards .lpa-laurel__rank {
+  font-size: 38px;
+}
+
+.lpa-closing__awards .lpa-laurel__rank--ja {
+  font-size: 22px;
+}
+
+.lpa-closing__awards .lpa-laurel__name {
+  font-size: 8.5px;
+  letter-spacing: 0;
+}
+
+.lpa-closing__copy {
+  font-family: var(--lpa-font-serif);
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.lpa-closing__text {
+  margin: 14px 0 24px;
+  font-size: 14px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.lpa-clinic {
+  margin-top: 40px;
+  padding: 22px 20px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+}
+
+.lpa-clinic__name {
+  font-family: var(--lpa-font-en);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin-bottom: 14px;
+  color: var(--lpa-ink);
+}
+
+.lpa-clinic__list {
+  margin: 0;
+  border-top: 1px solid var(--lpa-line);
+}
+
+.lpa-clinic__row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--lpa-line);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.lpa-clinic__row dt {
+  font-weight: 700;
+  color: var(--lpa-gold-deep);
+}
+
+.lpa-clinic__row dd {
+  margin: 0;
+}
+
+.lpa-clinic__link {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.lpa-clinic__link a {
+  color: var(--lpa-gold-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- フッター（LP用に簡略化） ---------- */
+.lpa-footer-links {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  font-size: 13px;
+}
+
+.lpa-footer-links a {
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- 追従CTA（テーマ .mobile-fixed-cta を拡張） ---------- */
+.lpa-fixed-cta {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 -2px 12px rgba(46, 35, 29, 0.12);
+}
+
+.lpa-fixed-cta__note {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  color: #8E6B36;
+  text-align: center;
+}
+
+.lpa-fixed-cta .mobile-cta-button {
+  width: 100%;
+  max-width: 390px;
+  font-size: 16px;
+  padding: 13px 20px;
+}
+
+body.lp-chinatsu-award.has-mobile-cta {
+  padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+}
+
+/* ---------- 幅の狭い端末（〜374px） ---------- */
+@media (max-width: 374px) {
+  .lpa-hero__title {
+    font-size: 22px;
+  }
+
+  .lpa-hero__title .lpa-hero__title-em {
+    font-size: 33px;
+  }
+
+  .lpa-laurel {
+    padding: 4px 28px;
+  }
+
+  .lpa-laurel::before,
+  .lpa-laurel::after {
+    width: 38px;
+    height: 76px;
+    margin-top: -38px;
+  }
+
+  .lpa-laurel__rank {
+    font-size: 38px;
+  }
+
+  .lpa-laurel__rank--ja {
+    font-size: 21px;
+  }
+
+  .lpa-laurel__name {
+    font-size: 8px;
+  }
+}
+
+/* ---------- タブレット・PC ---------- */
+@media (min-width: 768px) {
+  .lpa-section {
+    padding: 72px 0;
+  }
+
+  .lpa-hero {
+    padding: 48px 0 52px;
+  }
+
+  .lpa-hero__title {
+    font-size: 31px;
+  }
+
+  .lpa-hero__title .lpa-hero__title-em {
+    font-size: 50px;
+  }
+
+  .lpa-hero__body {
+    gap: 24px;
+  }
+
+  .lpa-laurel {
+    min-height: 130px;
+    padding: 4px 56px;
+  }
+
+  .lpa-laurel::before,
+  .lpa-laurel::after {
+    width: 60px;
+    height: 120px;
+    margin-top: -60px;
+  }
+
+  .lpa-laurel::before {
+    left: 6px;
+  }
+
+  .lpa-laurel::after {
+    right: 6px;
+  }
+
+  .lpa-laurel__place {
+    font-size: 12px;
+  }
+
+  .lpa-laurel__rank {
+    font-size: 56px;
+  }
+
+  .lpa-laurel__rank--ja {
+    font-size: 32px;
+  }
+
+  .lpa-laurel__name {
+    font-size: 11px;
+  }
+
+  .lpa-carousel__item {
+    flex-basis: 60%;
+  }
+}
