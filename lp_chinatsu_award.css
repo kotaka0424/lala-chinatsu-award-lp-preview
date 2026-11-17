@@ -31,11 +31,6 @@
   height: auto;
 }
 
-/* 1カラムのLPとして、広い画面でも読みやすい幅に収める */
-.lpa .container {
-  max-width: 560px;
-}
-
 /* LPでは離脱導線を減らす（グローバルメニュー・ページトップボタンを非表示） */
 .lp-chinatsu-award .header__menu-toggle {
   display: none !important;
@@ -211,7 +206,7 @@
   align-items: center;
   justify-content: center;
   min-height: 104px;
-  padding: 4px 34px;
+  padding: 4px 36px;
   text-align: center;
   color: var(--lpa-gold-light);
   list-style: none;
@@ -222,20 +217,20 @@
   content: "";
   position: absolute;
   top: 50%;
-  width: 46px;
-  height: 92px;
-  margin-top: -46px;
+  width: 40px;
+  height: 80px;
+  margin-top: -40px;
   background-color: currentColor;
   -webkit-mask: url("images/laurel.svg") center / contain no-repeat;
   mask: url("images/laurel.svg") center / contain no-repeat;
 }
 
 .lpa-laurel::before {
-  left: -4px;
+  left: 0;
 }
 
 .lpa-laurel::after {
-  right: -4px;
+  right: 0;
   transform: scaleX(-1);
 }
 
@@ -271,9 +266,9 @@
 }
 
 .lpa-laurel__name {
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.45;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   white-space: nowrap;
   color: var(--lpa-on-dark-soft);
 }
@@ -373,8 +368,8 @@
 
 .lpa-hero__body {
   display: grid;
-  grid-template-columns: minmax(0, 46fr) minmax(0, 54fr);
-  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
   align-items: center;
 }
 
@@ -398,19 +393,21 @@
   left: 50%;
   bottom: 10px;
   transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   white-space: nowrap;
   background-color: rgba(255, 255, 255, 0.94);
-  border-radius: 9999px;
-  padding: 4px 12px;
-  font-size: 9px;
+  border-radius: 10px;
+  padding: 5px 10px 3px;
+  font-size: 10px;
   line-height: 1.3;
   color: var(--lpa-ink-soft);
 }
 
 .lpa-hero__photo figcaption strong {
-  margin-left: 5px;
   font-family: var(--lpa-font-en);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--lpa-ink);
@@ -864,8 +861,6 @@
 .lpa-carousel {
   display: flex;
   gap: 12px;
-  max-width: 560px;
-  margin: 0 auto;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -1214,48 +1209,38 @@
 
 /* 2列に並べるため、月桂樹と文字を少し小さくする */
 .lpa-closing__awards .lpa-laurel {
-  padding: 4px 30px;
+  min-height: 88px;
+  padding: 4px 34px;
 }
 
 .lpa-closing__awards .lpa-laurel::before,
 .lpa-closing__awards .lpa-laurel::after {
-  width: 40px;
-  height: 80px;
-  margin-top: -40px;
-}
-
-.lpa-closing__awards .lpa-laurel::before {
-  left: -9px;
-}
-
-.lpa-closing__awards .lpa-laurel::after {
-  right: -9px;
+  width: 34px;
+  height: 68px;
+  margin-top: -34px;
 }
 
 .lpa-closing__awards .lpa-laurel__place {
-  font-size: 9.5px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
 }
 
 .lpa-closing__awards .lpa-laurel__rank {
-  font-size: 38px;
+  font-size: 36px;
 }
 
 .lpa-closing__awards .lpa-laurel__rank--ja {
-  font-size: 22px;
-}
-
-.lpa-closing__awards .lpa-laurel__name {
-  font-size: 8.5px;
-  letter-spacing: 0;
+  padding: 3px 0 0;
+  font-size: 19px;
+  letter-spacing: 0.04em;
 }
 
 .lpa-closing__copy {
   font-family: var(--lpa-font-serif);
-  font-size: 21px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 1.7;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
+  font-feature-settings: "palt";
   text-align: center;
 }
 
@@ -1364,7 +1349,17 @@ body.lp-chinatsu-award.has-mobile-cta {
   padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
 }
 
-/* ---------- 幅の狭い端末（〜374px） ---------- */
+/* ---------- 幅の狭い端末 ---------- */
+@media (max-width: 389px) {
+  .lpa-hero__title {
+    font-size: 24px;
+  }
+
+  .lpa-hero__title .lpa-hero__title-em {
+    font-size: 37px;
+  }
+}
+
 @media (max-width: 374px) {
   .lpa-hero__title {
     font-size: 22px;
@@ -1374,89 +1369,181 @@ body.lp-chinatsu-award.has-mobile-cta {
     font-size: 33px;
   }
 
-  .lpa-laurel {
-    padding: 4px 28px;
+  .lpa-hero__body {
+    gap: 6px;
   }
 
-  .lpa-laurel::before,
-  .lpa-laurel::after {
-    width: 38px;
-    height: 76px;
-    margin-top: -38px;
+  .lpa-heading__ja {
+    font-size: 23px;
   }
 
-  .lpa-laurel__rank {
+  .lpa-point__title {
+    font-size: 17px;
+  }
+
+  .lpa-closing__copy {
+    font-size: 18px;
+  }
+
+  .lpa-artist__instagram {
+    gap: 10px;
+    padding-right: 16px;
+  }
+
+  .lpa-artist__instagram-text strong {
+    font-size: 13px;
+  }
+
+  .lpa-hero__awards .lpa-laurel {
+    padding: 4px 31px;
+  }
+
+  .lpa-hero__awards .lpa-laurel::before,
+  .lpa-hero__awards .lpa-laurel::after {
+    width: 34px;
+    height: 68px;
+    margin-top: -34px;
+  }
+
+  .lpa-hero__awards .lpa-laurel__rank {
     font-size: 38px;
   }
 
-  .lpa-laurel__rank--ja {
-    font-size: 21px;
-  }
-
-  .lpa-laurel__name {
-    font-size: 8px;
+  .lpa-hero__awards .lpa-laurel__rank--ja {
+    font-size: 22px;
   }
 }
 
-/* ---------- タブレット・PC ---------- */
-@media (min-width: 768px) {
-  .lpa-section {
-    padding: 72px 0;
-  }
+/* ===============================================
+   配色パターンB：白系の背景 × ピンクゴールド
+   <main class="lpa lpa--light">、<body class="... lp-chinatsu-award--light"> で切り替える
+   =============================================== */
+.lpa--light {
+  --lpa-gold: #C08784;
+  --lpa-gold-deep: #9C5A5E;
+  --lpa-gold-light: #DDB0AA;
+  --lpa-gold-pale: #FAEDEA;
+  --lpa-paper: #FBF4F1;
+  --lpa-cream: #FEFAF8;
+  --lpa-line: #F0DEDA;
+  --lpa-pg-gradient: linear-gradient(115deg, #9C5A5E 0%, #CE9690 48%, #A8656A 100%);
+}
 
-  .lpa-hero {
-    padding: 48px 0 52px;
-  }
+/* ファーストビュー */
+.lpa--light .lpa-hero {
+  background:
+    radial-gradient(110% 55% at 88% 0%, rgba(221, 176, 170, 0.34) 0%, rgba(221, 176, 170, 0) 62%),
+    linear-gradient(180deg, #FFFFFF 0%, #FCF3F0 100%);
+  color: var(--lpa-ink);
+}
 
-  .lpa-hero__title {
-    font-size: 31px;
-  }
+.lpa--light .lpa-hero__label {
+  border-color: var(--lpa-gold);
+  color: var(--lpa-gold-deep);
+}
 
-  .lpa-hero__title .lpa-hero__title-em {
-    font-size: 50px;
-  }
+.lpa--light .lpa-hero__label span {
+  background-color: var(--lpa-gold-deep);
+  color: #FFFFFF;
+}
 
-  .lpa-hero__body {
-    gap: 24px;
-  }
+.lpa--light .lpa-hero__title {
+  color: var(--lpa-ink);
+}
 
-  .lpa-laurel {
-    min-height: 130px;
-    padding: 4px 56px;
-  }
+.lpa--light .lpa-hero__title .lpa-hero__title-em {
+  color: var(--lpa-gold-deep);
+  background: var(--lpa-pg-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  .lpa-laurel::before,
-  .lpa-laurel::after {
-    width: 60px;
-    height: 120px;
-    margin-top: -60px;
-  }
+.lpa--light .lpa-hero__photo img {
+  border-color: var(--lpa-gold-light);
+  box-shadow: 0 12px 28px rgba(156, 90, 94, 0.2);
+}
 
-  .lpa-laurel::before {
-    left: 6px;
-  }
+.lpa--light .lpa-hero__photo figcaption {
+  box-shadow: 0 2px 8px rgba(156, 90, 94, 0.16);
+}
 
-  .lpa-laurel::after {
-    right: 6px;
-  }
+.lpa--light .lpa-hero__lead {
+  color: var(--lpa-ink);
+}
 
-  .lpa-laurel__place {
-    font-size: 12px;
-  }
+.lpa--light .lpa-cta--hero .lpa-cta__lead {
+  color: var(--lpa-gold-deep);
+}
 
-  .lpa-laurel__rank {
-    font-size: 56px;
-  }
+.lpa--light .lpa-cta--hero .lpa-cta__note {
+  color: var(--lpa-ink-soft);
+}
 
-  .lpa-laurel__rank--ja {
-    font-size: 32px;
-  }
+.lpa--light .lpa-cta--hero .lpa-cta__note strong {
+  color: var(--lpa-ink);
+}
 
-  .lpa-laurel__name {
-    font-size: 11px;
-  }
+/* 月桂樹バッジ */
+.lpa--light .lpa-laurel {
+  color: var(--lpa-gold);
+}
 
-  .lpa-carousel__item {
-    flex-basis: 60%;
-  }
+.lpa--light .lpa-laurel__place {
+  color: var(--lpa-ink);
+}
+
+.lpa--light .lpa-laurel__rank {
+  color: var(--lpa-gold-deep);
+  background: var(--lpa-pg-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lpa--light .lpa-laurel__name {
+  color: var(--lpa-ink-soft);
+}
+
+/* 3つのこだわり（濃色セクションを淡いピンクに） */
+.lpa--light .lpa-section--dark {
+  background: linear-gradient(180deg, #FBEFEC 0%, #F7E3DF 100%);
+  color: var(--lpa-ink);
+}
+
+.lpa--light .lpa-heading--light .lpa-heading__en {
+  color: var(--lpa-gold-deep);
+}
+
+.lpa--light .lpa-heading--light .lpa-heading__ja {
+  color: var(--lpa-ink);
+}
+
+.lpa--light .lpa-point {
+  border-color: var(--lpa-gold-light);
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(156, 90, 94, 0.08);
+}
+
+.lpa--light .lpa-point__num {
+  color: var(--lpa-gold);
+}
+
+.lpa--light .lpa-point__title {
+  color: var(--lpa-ink);
+}
+
+.lpa--light .lpa-point__text {
+  color: var(--lpa-ink);
+}
+
+/* ご予約の流れ */
+.lpa--light .lpa-steps li::before {
+  background-color: var(--lpa-gold-deep);
+  color: #FFFFFF;
+}
+
+/* 追従CTA */
+body.lp-chinatsu-award--light .lpa-fixed-cta__note {
+  color: #9C5A5E;
 }
