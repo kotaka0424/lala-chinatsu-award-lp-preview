@@ -1547,3 +1547,100 @@ body.lp-chinatsu-award.has-mobile-cta {
 body.lp-chinatsu-award--light .lpa-fixed-cta__note {
   color: #9C5A5E;
 }
+
+/* ---------- 3つのこだわり：使用色素 ---------- */
+.lpa-pigment {
+  margin-top: 16px;
+  padding: 16px 12px 14px 14px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(220, 195, 147, 0.3);
+}
+
+.lpa-pigment__title {
+  font-family: var(--lpa-font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--lpa-on-dark);
+}
+
+.lpa-pigment__title span {
+  display: block;
+  margin-bottom: 2px;
+  font-family: var(--font-family-base);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--lpa-gold-light);
+}
+
+.lpa-pigment__title small {
+  margin-left: 2px;
+  font-family: var(--font-family-base);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.lpa-pigment__list {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lpa-pigment__list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--lpa-on-dark);
+}
+
+.lpa-pigment__list li + li {
+  margin-top: 6px;
+}
+
+.lpa-pigment__list li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 11px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  color: var(--lpa-gold-light);
+}
+
+.lpa-pigment__note {
+  margin-top: 12px;
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--lpa-on-dark-soft);
+}
+
+.lpa--light .lpa-pigment {
+  background-color: var(--lpa-cream);
+  border-color: var(--lpa-line);
+}
+
+.lpa--light .lpa-pigment__title {
+  color: var(--lpa-ink);
+}
+
+.lpa--light .lpa-pigment__title span {
+  color: var(--lpa-gold-deep);
+}
+
+.lpa--light .lpa-pigment__list li {
+  color: var(--lpa-ink);
+}
+
+.lpa--light .lpa-pigment__list li::before {
+  color: var(--lpa-gold);
+}
+
+.lpa--light .lpa-pigment__note {
+  color: var(--lpa-ink-soft);
+}
